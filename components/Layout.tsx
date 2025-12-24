@@ -27,7 +27,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang, theme, toggleT
             onClick={() => setCurrentView('main')}
             className="cursor-pointer group flex items-center gap-2"
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-emerald-500 rounded-lg flex items-center justify-center text-white font-black text-xl shadow-lg group-hover:scale-110 transition-transform">
+            <div className="w-10 h-10 bg-gradient-to-br from-cyan-600 to-blue-700 rounded-lg flex items-center justify-center text-white font-black text-xl shadow-lg group-hover:scale-110 transition-transform">
               A
             </div>
             <span className="text-2xl font-black tracking-tight dark:text-white">AYOUB</span>
@@ -38,13 +38,13 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang, theme, toggleT
             <nav className="hidden md:flex items-center gap-6 mr-4">
                <button 
                 onClick={() => setCurrentView('main')}
-                className={`font-bold transition-colors ${currentView === 'main' ? 'text-blue-500' : 'text-slate-500 hover:text-blue-400'}`}
+                className={`font-bold transition-colors ${currentView === 'main' ? 'text-cyan-500' : 'text-slate-500 hover:text-cyan-400'}`}
               >
                 {t.home}
               </button>
               <button 
                 onClick={() => setCurrentView('achievements')}
-                className={`font-bold transition-colors ${currentView === 'achievements' ? 'text-blue-500' : 'text-slate-500 hover:text-blue-400'}`}
+                className={`font-bold transition-colors ${currentView === 'achievements' ? 'text-cyan-500' : 'text-slate-500 hover:text-cyan-400'}`}
               >
                 {t.achievements}
               </button>
@@ -52,21 +52,21 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang, theme, toggleT
 
             {/* Language Switcher */}
             <div className="relative group">
-              <button className="flex items-center gap-1 p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+              <button className="flex items-center gap-1 p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300">
                 <i className="fas fa-language text-xl"></i>
               </button>
               <div className="absolute right-0 mt-2 w-32 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 overflow-hidden z-50">
-                <button onClick={() => setLang('ar')} className="w-full p-2 text-sm text-center hover:bg-slate-100 dark:hover:bg-slate-700">العربية</button>
-                <button onClick={() => setLang('en')} className="w-full p-2 text-sm text-center hover:bg-slate-100 dark:hover:bg-slate-700">English</button>
-                <button onClick={() => setLang('fr')} className="w-full p-2 text-sm text-center hover:bg-slate-100 dark:hover:bg-slate-700">Français</button>
-                <button onClick={() => setLang('tz')} className="w-full p-2 text-sm text-center hover:bg-slate-100 dark:hover:bg-slate-700">ⵜⴰⵎⴰⵣⵉⵖⵜ</button>
+                <button onClick={() => setLang('ar')} className="w-full p-2 text-sm text-center hover:bg-cyan-50 dark:hover:bg-cyan-900/30 dark:text-slate-200">العربية</button>
+                <button onClick={() => setLang('en')} className="w-full p-2 text-sm text-center hover:bg-cyan-50 dark:hover:bg-cyan-900/30 dark:text-slate-200">English</button>
+                <button onClick={() => setLang('fr')} className="w-full p-2 text-sm text-center hover:bg-cyan-50 dark:hover:bg-cyan-900/30 dark:text-slate-200">Français</button>
+                <button onClick={() => setLang('tz')} className="w-full p-2 text-sm text-center hover:bg-cyan-50 dark:hover:bg-cyan-900/30 dark:text-slate-200">ⵜⴰⵎⴰⵣⵉⵖⵜ</button>
               </div>
             </div>
 
             {/* Theme Toggle */}
             <button 
               onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
+              className="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300"
             >
               {theme === 'light' ? <i className="fas fa-moon"></i> : <i className="fas fa-sun text-yellow-400"></i>}
             </button>

@@ -46,16 +46,16 @@ const HomeContent: React.FC<HomeContentProps> = ({ lang, theme }) => {
       <div className="flex flex-col items-center justify-center min-h-[50vh] space-y-8 animate-fade-in px-4">
         <button 
           onClick={() => setShowEmail(false)}
-          className="group flex items-center gap-3 text-slate-500 hover:text-violet-500 font-bold transition-all"
+          className="group flex items-center gap-3 text-cyan-600 dark:text-cyan-400 font-bold transition-all"
         >
-          <i className={`fas ${lang === 'ar' ? 'fa-arrow-right' : 'fa-arrow-left'} group-hover:-translate-x-1 transition-transform`}></i>
+          <i className={`fas ${lang === 'ar' ? 'fa-arrow-right' : 'fa-arrow-left'} group-hover:px-2 transition-all`}></i>
           <span>{lang === 'ar' ? 'العودة للرئيسية' : 'Back to Home'}</span>
         </button>
 
-        <div className="bg-white dark:bg-slate-800 p-10 md:p-16 rounded-[3rem] shadow-2xl text-center border-b-8 border-red-500 w-full max-w-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-full -mr-16 -mt-16 pointer-events-none"></div>
+        <div className="bg-white dark:bg-slate-800 p-10 md:p-16 rounded-[3rem] shadow-2xl text-center border-b-8 border-cyan-500 w-full max-w-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full -mr-16 -mt-16 pointer-events-none"></div>
           
-          <div className="w-24 h-24 bg-red-100 dark:bg-red-900/20 text-red-500 rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner">
+          <div className="w-24 h-24 bg-cyan-100 dark:bg-cyan-900/20 text-cyan-600 rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner">
             <i className="fa-solid fa-envelope-circle-check text-4xl"></i>
           </div>
 
@@ -66,7 +66,7 @@ const HomeContent: React.FC<HomeContentProps> = ({ lang, theme }) => {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button 
               onClick={copyToClipboard}
-              className={`flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-bold transition-all ${copied ? 'bg-emerald-500 text-white' : 'bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600'}`}
+              className={`flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-bold transition-all ${copied ? 'bg-emerald-500 text-white' : 'bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200'}`}
             >
               <i className={`fas ${copied ? 'fa-check' : 'fa-copy'}`}></i>
               {copied ? (lang === 'ar' ? 'تم النسخ!' : 'Copied!') : (lang === 'ar' ? 'نسخ البريد' : 'Copy Email')}
@@ -74,7 +74,7 @@ const HomeContent: React.FC<HomeContentProps> = ({ lang, theme }) => {
             
             <a 
               href={`mailto:${SOCIAL_LINKS.email}`}
-              className="flex items-center justify-center gap-2 px-8 py-4 bg-red-500 text-white rounded-2xl font-bold hover:bg-red-600 hover:shadow-lg hover:shadow-red-500/30 transition-all"
+              className="flex items-center justify-center gap-2 px-8 py-4 bg-cyan-600 text-white rounded-2xl font-bold hover:bg-cyan-700 hover:shadow-lg hover:shadow-cyan-500/30 transition-all"
             >
               <i className="fas fa-paper-plane"></i>
               {lang === 'ar' ? 'إرسال رسالة' : 'Send Message'}
@@ -91,62 +91,62 @@ const HomeContent: React.FC<HomeContentProps> = ({ lang, theme }) => {
 
   return (
     <div className="max-w-5xl mx-auto space-y-8 animate-fade-in">
-      {/* Minimized & Sleek Dashboard */}
-      <div className="overflow-hidden bg-slate-900 rounded-[2rem] shadow-2xl border border-white/5 ring-1 ring-white/10">
+      {/* Minimized & Sleek Dashboard - New Color Theme */}
+      <div className="overflow-hidden bg-slate-950 rounded-[2rem] shadow-2xl border border-cyan-500/20 ring-1 ring-cyan-500/10">
         <div className="flex flex-col md:flex-row">
           
-          {/* Spiritual Content - Compact */}
-          <div className="flex-grow p-6 md:p-8 bg-gradient-to-br from-violet-800 via-indigo-900 to-slate-900 text-white flex flex-col justify-center relative min-h-[160px]">
-            <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
-              <i className="fas fa-star-and-crescent text-8xl"></i>
+          {/* Spiritual Content - Deep Oceanic Gradient */}
+          <div className="flex-grow p-6 md:p-8 bg-gradient-to-br from-cyan-900 via-blue-950 to-slate-950 text-white flex flex-col justify-center relative min-h-[160px]">
+            <div className="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
+              <i className="fas fa-mosque text-8xl -rotate-12"></i>
             </div>
             
             <div className="relative z-10 space-y-4">
-              <h2 className="text-2xl md:text-3xl font-tajawal font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-violet-200">
+              <h2 className="text-2xl md:text-3xl font-tajawal font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-100 to-emerald-200">
                 {t.quranVerse}
               </h2>
               <div className="flex gap-3 text-xs md:text-sm">
-                <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-lg border border-white/10 text-violet-200">
+                <span className="px-3 py-1 bg-cyan-500/10 backdrop-blur-sm rounded-lg border border-cyan-500/20 text-cyan-300">
                   {t.alhamdulillah}
                 </span>
-                <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-lg border border-white/10 text-indigo-200">
+                <span className="px-3 py-1 bg-emerald-500/10 backdrop-blur-sm rounded-lg border border-emerald-500/20 text-emerald-300">
                   {t.allahuAkbar}
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Temporal Content - Minimized */}
-          <div className="md:w-[320px] p-6 flex flex-col justify-between bg-slate-950/40 backdrop-blur-xl border-t md:border-t-0 md:border-l border-white/10">
+          {/* Temporal Content - Dark Glass */}
+          <div className="md:w-[320px] p-6 flex flex-col justify-between bg-slate-900/60 backdrop-blur-2xl border-t md:border-t-0 md:border-l border-cyan-500/10">
             {/* Clock */}
             <div className="flex flex-col">
-              <span className="text-[10px] font-black text-violet-400 uppercase tracking-[0.2em] mb-1">Live Time</span>
-              <div className="text-4xl md:text-5xl font-mono font-black tabular-nums text-white">
+              <span className="text-[10px] font-black text-cyan-500 uppercase tracking-[0.2em] mb-1">Current Session</span>
+              <div className="text-4xl md:text-5xl font-mono font-black tabular-nums text-white drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]">
                 {time.toLocaleTimeString(lang === 'ar' ? 'ar-DZ' : 'en-US')}
               </div>
             </div>
 
-            {/* Dates Row - Tighter */}
-            <div className="mt-6 flex justify-between gap-4 border-t border-white/5 pt-4">
+            {/* Dates Row - Minimal */}
+            <div className="mt-6 flex justify-between gap-4 border-t border-cyan-500/10 pt-4">
               <div className="space-y-0.5">
                 <span className="text-[9px] font-bold text-slate-500 uppercase tracking-tighter">{t.birthDateLabel}</span>
                 <p className="text-sm font-bold text-slate-300">2002 / 01 / 01</p>
               </div>
               <div className="space-y-0.5 text-right">
                 <span className="text-[9px] font-bold text-slate-500 uppercase tracking-tighter">{t.hijriDateLabel}</span>
-                <p className="text-xs font-bold text-indigo-400">{formatHijri(new Date(2002, 0, 1))}</p>
+                <p className="text-xs font-bold text-cyan-400">{formatHijri(new Date(2002, 0, 1))}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Social & Contact - Refined */}
-      <section className="bg-white/5 dark:bg-slate-800/20 backdrop-blur-md rounded-[2.5rem] p-8 md:p-12 border border-slate-200/10 text-center">
+      {/* Social & Contact - Refined Cyan Theme */}
+      <section className="bg-white/5 dark:bg-slate-800/10 backdrop-blur-md rounded-[2.5rem] p-8 md:p-12 border border-cyan-500/10 text-center">
         <div className="inline-block mb-10 group">
           <h3 className="text-2xl md:text-3xl font-black relative px-4">
             {t.contactMe}
-            <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-violet-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+            <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
           </h3>
         </div>
         
@@ -158,7 +158,7 @@ const HomeContent: React.FC<HomeContentProps> = ({ lang, theme }) => {
                 if (item.link === 'email_trigger') setShowEmail(true);
                 else if (item.link) window.open(item.link, '_blank');
               }}
-              className={`${item.color} w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center text-white text-2xl md:text-3xl shadow-xl hover:shadow-2xl hover:-translate-y-3 hover:rotate-[360deg] transition-all duration-700 active:scale-90 group relative ring-4 ring-transparent hover:ring-white/20`}
+              className={`${item.color} w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center text-white text-2xl md:text-3xl shadow-lg hover:shadow-cyan-500/30 hover:-translate-y-3 hover:rotate-[360deg] transition-all duration-700 active:scale-90 group relative ring-4 ring-transparent hover:ring-white/20`}
             >
               <i className={`${item.icon} transition-transform`}></i>
               {!item.link && item.link !== 'email_trigger' && (
